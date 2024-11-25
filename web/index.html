@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Kalkulus 1 </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <h1>Fungsi Logaritma</h1>
+        </div>
+
+        <nav class="navbar">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="menu">
+                <li><a href="#home" onclick="showSection('home')" >Home</a></li>
+                <li><a href="#menu" onclick="showSection('menu')">Menu</a></li>
+                <li><a href="#belajar" onclick="showSection('belajar')">Geogebra</a></li>
+                <li><a href="#kalkulator" onclick="showSection('kalkulator')",>Kalkulator</a></li>
+                <li><a href="#about" onclick="showSection('about')">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="section">
+            <div class="content">
+                <img src="https://img.freepik.com/free-vector/flat-pi-number-illustration_52683-81437.jpg?ga=GA1.1.1950441726.1730374864&semt=ais_hybrid" alt="Gambar Home" class="hover-image" width="400px"/>
+                <div class="teks">
+                    <p class="deskripsi">KALKULUS I</p>
+                    <h2>FUNGSI LOGARITMA</h2>
+                    <p>Hallo Semuanya!!</p>
+                    <p>kami akan membantumu untuk mempelajari tentang fungsi Logaritma.</p>
+                    <p>Sebelum menuju fungsi logaritma, kami akan memberikan penjelasan pengertian, bentuk umum, persamaan dan pertidaksamaan yang merupakan materi dasar logaritma dengan menyediakan contoh soal yang akan membuat mu lebih mudah memahami! Dalam laman ini kami juga menyediakan kalkulator khusus logaritma yang dapat diakses lho!</p>
+                    <p>Selamat Belajar</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="section" style="display:none;">
+            <h3>Menu Pembelajaran</h3>
+            <div class="menu-container">
+                <div class="menu-item" onclick="showSection('pengertian')">
+                    <img src="https://img.freepik.com/free-vector/happy-students-learning-math-college-school-isolated-flat-illustration_74855-10799.jpg?ga=GA1.1.1950441726.1730374864&semt=ais_hybrid" alt="Pengertian Logaritma" "/>
+                    <p>Pengertian dan Bentuk Umum Logaritma</p>
+                </div>
+                <div class="menu-item" onclick="showSection('sifat')">
+                    <div class="kartu-tutorarget=">
+                         <img src="https://img.freepik.com/free-photo/flat-lay-statistics-presentation-with-chart_23-2149023814.jpg?ga=GA1.1.1950441726.1730374864&semt=ais_hybrid" alt="Sifat Logaritma"> <p>Sifat - Sifat Logaritma</p>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu-item" onclick="showSection('fungsi')">
+                    <img src="https://img.freepik.com/free-photo/frame-economy-charts_23-2148541989.jpg?ga=GA1.1.1950441726.1730374864&semt=ais_hybrid" alt="Fungsi Logaritma" />                    <p>Fungsi Logaritma</p>
+                </div>
+                <div class="menu-item" onclick="showSection('contoh')">
+                    <img src="https://img.freepik.com/free-photo/colourful-math-numbers-letters-top-view_23-2148416105.jpg?ga=GA1.1.1950441726.1730374864&semt=ais_hybrid" alt="Contoh Soal" />
+                    <p>Contoh Soal</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <title>Pengertian Logaritma</title>
+        <style>
+           
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef;
+            color: #343a40;
+            text-align: center;
+        }
+
+        /* Gaya khusus untuk section logaritma */
+        .logaritma-section {
+            display: none; /* Awalnya disembunyikan */
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto; /* Pusatkan section */
+            transition: transform 0.3s;
+        }
+
+        .logaritma-section:hover {
+            transform: scale(1.02);
+        }
+
+        .logaritma-section h3 {
+            color: #ff3f9f;
+            margin-bottom: 20px;
+        }
+
+        .logaritma-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .logaritma-section blockquote {
+            background: #f8f9fa;
+            border-left: 5px solid #007BFF;
+            padding: 10px 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .logaritma-section button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .logaritma-section button:hover {
+            background-color: #ff3f9f;
+            transform: translateY(-2px);
+        }
+
+        .logaritma-section button:active {
+            transform: translateY(0);
+        }
+        </style>
+    </head>
+    <body>
+    
+    <!-- Pengertian Logaritma Section -->
+    <section id="pengertian" class="logaritma-section">
+        <h3>Pengertian dan Bentuk Umum Logaritma</h3>
+        <p>Logaritma adalah operasi inversi atau kebalikan dari perpangkatan. Dengan begitu, logaritma mencari nilai pangkat dari sebuah bilangan.</p>
+        <p>Bentuk Umum :</p>
+        <pre><blockquote>Jika a<sup>n</sup> = x maka a<sub>log x</sub> = n</blockquote></pre>
+        <p>Keterangan :</p>
+        <blockquote><p>a = bilangan pokok (basis), syarat: a > 0 dan a ≠ 1</p>
+            <p>x = bilangan yang dicari nilai logaritmanya (numerus), syarat: x > 0</p>
+            <p>n = besar pengkat/nilai logaritma</p>
+
+        </blockquote>
+        <button onclick="hideSection('pengertian')">Kembali Ke Menu</button>
+    </section>
+    
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('menu').style.display = 'none'; // Sembunyikan menu
+            document.getElementById(sectionId).style.display = 'block'; // Tampilkan section yang dipilih
+        }
+    
+        function hideSection(sectionId) {
+            document.getElementById(sectionId).style.display = 'none'; // Sembunyikan section
+            document.getElementById('menu').style.display = 'block'; // Tampilkan menu
+        }
+    </script>
+    
+    </body>
+        <section id="sifat" class="section" style="display:none;">
+            <title><h3>Sifat-sifat Logaritma</h3></title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        header {
+            background-color: #ffff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: none;
+            align-items: center;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #FFD700; /* Warna kuning saat hover */
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(247, 66, 6, 0.1);
+        }
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .description {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+        }
+        .formula {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 18px;
+            padding: 10px;
+            border-left: 4px solid #007BFF; /* Garis samping */
+            background-color: #f9f9f9; /* Latar belakang formula */
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .formula:hover {
+            background-color: #e9f5ff; /* Latar belakang saat hover */
+        }
+        .formula-text {
+            margin-left: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ddd;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+    <header>
+        <h1>SIFAT - SIFAT LOGARITMA</h1>
+    </header>
+    <div class="container">
+        <div class="description">Berikut adalah beberapa sifat-sifat logaritma:</div>
+        <div class="formula">
+            <div class="formula-text">1. a<sup>log<sub>a</sub>a</sup> = 1, karena a<sup>1</sup> = a</div>
+        </div>
+        <div class="formula">
+            <div class="formula-text">2. a<sup>log<sub>a</sub>1</sup> = 0, karena a<sup>0</sup> = 1</div>
+        </div>
+        <div class="formula">
+            <div class="formula-text">3. a<sup>log<sub>a</sub>a<sup>n</sup></sup> = n</div>
+        </div>
+        <div class="formula">
+            <div class="formula-text">4. log<sub>a</sub>(b.c) = log<sub>a</sub>b + log<sub>a</sub>c</div>
+        </div>
+        <div class="formula">
+            <div class="formula-text">5. log<sub>a</sub>(b/c) = log<sub>a</sub>b - log<sub>a</sub>c</div>
+        </div>
+        <div class="formula">
+          <div class="formula-text">6. log<sub>a</sub>b<sup>n</sup> = n.log<sub>a</sub>b</div>
+      </div>
+      <div class="formula">
+          <div class="formula-text">7. log<sub>a</sub>b × log<sub>c</sub>c = log<sub>a</sub>c</div>
+      </div>
+      <div class="formula">
+          <div class="formula-text">8. log<sub>a</sub>b = log<sub>c</sub>b / log<sub>c</sub>a</div>
+      </div>
+      <div class="formula">
+          <div class="formula-text">9. log<sub>a</sub>b = 1 / log<sub>b</sub>a</div>
+      </div>
+      <div class="formula">
+          <div class="formula-text">10. a<sup>log<sub>a</sub>b</sup> = b</div>
+      </div>
+      <div class="formula">
+          <div class="formula-text">11. a<sup>n/m</sup> log<sub>a</sub>b<sup>n</sup> = (n/m) log<sub>a</sub>b</div>
+      </div>
+  </div>
+
+    <title>Contoh Soal Logaritma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffff;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #ff3f9f;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffdbee;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            align-items: center;
+        }
+        .soal {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #130ba2;
+            border-radius: 5px;
+            align-items: center;
+        }
+        .soal h3 {
+            margin: 0;
+            color: #555;
+            font-size: medium;
+            display: inline-block;
+            align-items: center;
+        }
+        .jawaban {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #0e46a0;
+        }
+        .penjelasan {
+            margin-top: 5px;
+            font-style: italic;
+            color: #555;
+            /* align-items: center; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Logaritma</h1>
+
+        <div class="soal">
+            <h3>1. Hitunglah nilai dari 7<sup>log<sub>7</sub>7</sup> + 3<sup>log<sub>3</sub>3</sup>.</h3>
+            <div class="jawaban">Jawaban: 10</div>
+            <div class="penjelasan">Karena 7<sup>log<sub>7</sub>7</sup> = 7<sup>1</sup> = 7 dan 3<sup>log<sub>3</sub>3</sup> = 3<sup>1</sup> = 3, maka 7 + 3 = 10.</div>
+        </div>
+
+        <div class="soal">
+            <h3>2. Jika x = 5, berapa nilai dari 5<sup>log<sub>5</sub>1</sup> + 10?</h3>
+            <div class="jawaban">Jawaban: 11</div>
+            <div class="penjelasan">5<sup>log<sub>5</sub>1</sup> = 5<sup>0</sup> = 1, sehingga 1 + 10 = 11.</div>
+        </div>
+
+        <div class="soal">
+            <h3>3. Jika n = 3, hitunglah nilai dari 4<sup>log<sub>4</sub>4<sup>3</sup></sup>.</h3>
+            <div class="jawaban">Jawaban: 64</div>
+            <div class="penjelasan">4<sup>log<sub>4</sub>4<sup>3</sup></sup> = 4<sup>3</sup> = 64, karena log<sub>4</sub>4<sup>3</sup> = 3.</div>
+        </div>
+
+        <div class="soal">
+            <h3>4. Hitunglah log<sub>10</sub>(100 × 1000).</h3>
+            <div class="jawaban">Jawaban: 5</div>
+            <div class="penjelasan">log<sub>10</sub>(100 × 1000) = log<sub>10</sub>100 + log<sub>10</sub>1000 = 2 + 3 = 5.</div>
+        </div>
+
+        <div class="soal">
+            <h3>5. Hitunglah log<sub>2</sub>(32/4).</h3>
+            <div class="jawaban">Jawaban: 3</div>
+            <div class="penjelasan">log<sub>2</sub>(32/4) = log<sub>2</sub>32 - log<sub>2</sub>4 = 5 - 2 = 3.</div>
+        </div>
+
+        <div class="soal">
+              <h3>6. Hitunglah nilai dari log<sub>5</sub>(25<sup>3</sup>).</h3>
+              <div class="jawaban">Jawaban: 6</div>
+              <div class="penjelasan">log<sub>5</sub>(25<sup>3</sup>) = 3 × log<sub>5</sub>25 = 3 × 2 = 6, karena 25 = 5<sup>2</sup>.</div>
+          </div>
+  
+          <div class="soal">
+              <h3>7. Jika a = 3 dan b = 9, hitunglah nilai dari log<sub>3</sub>9 × log<sub>9</sub>9.</h3>
+              <div class="jawaban">Jawaban: 2</div>
+              <div class="penjelasan">log<sub>3</sub>9 = 2 dan log<sub>9</sub>9 = 1, sehingga 2 × 1 = 2.</div>
+          </div>
+  
+          <div class="soal">
+              <h3>8. Hitunglah log<sub>2</sub>16 dengan menggunakan logaritma dasar 10.</h3>
+              <div class="jawaban">Jawaban: 4 (sekitar)</div>
+              <div class="penjelasan">log<sub>2</sub>16 = log<sub>10</sub>16 / log<sub>10</sub>2. log<sub>10</sub>16 ≈ 1.2041 dan log<sub>10</sub>2 ≈ 0.3010, sehingga 1.2041 / 0.3010 ≈ 4.</div>
+          </div>
+  
+          <div class="soal">
+              <h3>9. Jika a = 10 dan b = 100, berapa nilai dari log<sub>10</sub>100?</h3>
+              <div class="jawaban">Jawaban: 2</div>
+              <div class="penjelasan">log<sub>10</sub>100 = 2, karena 10<sup>2</sup> = 100.</div>
+          </div>
+  
+          <div class="soal">
+              <h3>10. Hitunglah nilai dari 5<sup>log<sub>5</sub>25</sup>.</h3>
+              <div class="jawaban">Jawaban: 25</div>
+              <div class="penjelasan">5<sup>log<sub>5</sub>25</sup> = 25, karena log<sub>5</sub>25 = 2.</div>
+          </div>
+  
+          <div class="soal">
+              <h3>11. Jika n = 6 dan m = 3, hitunglah nilai dari 3<sup>(6/3)</sup> log<sub>3</sub>27.</h3>
+              <div class="jawaban">Jawaban: 9</div>
+              <div class="penjelasan">log<sub>3</sub>27 = 3, sehingga 3<sup>(6/3)</sup> × 3 = 3<sup>2</sup> × 3 = 9.</div>
+          </div>
+          <button onclick="showSection('menu')">Kembali ke Menu</button>
+          <div style="text-align: center;">
+          </div>
+        </section>
+
+
+        <title>Fungsi Logaritma</title>
+        <style>
+           body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #343a40;
+            text-align: center;
+        }
+
+        
+        .fungsi-section {
+            display: none; 
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto; 
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .fungsi-section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .fungsi-section h3 {
+            color: #007BFF;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .fungsi-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .fungsi-section blockquote {
+            background: #f8f9fa;
+            border-left: 5px solid #007BFF;
+            padding: 10px 15px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .fungsi-section button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .fungsi-section button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .fungsi-section button:active {
+            transform: translateY(0);
+        }
+        
+        .menu-section {
+            display: block;
+        }
+    </style>
+        
+    </head>
+    <body>
+    
+    <!-- Pengertian Logaritma Section -->
+    <section id="fungsi" class="fungsi-section">
+        <h3>Fungsi Logaritma</h3>
+        <p>Fungsi logaritma adalah fungsi invers dari eksponensial. Fungsi logaritma didefinisikan sebagai :</p>
+        <blockquote>Untuk x > 0 , a > 0, dan a ≠1, y = log a x jika dan hanya jika x = a y</blockquote>
+        <p>Maka fungsinya diberikan oleh</p>
+
+        <p>y = log<sub>a</sub> x jika dan hanya jika x = a<sup>y</sup></p>
+    <br>
+    <p>fungsi logaritma memiliki bentuk umum yang lebih menunjukkan solusi sebagai berikut: <blockquote>f(x) = a log (x)</blockquote>
+    <p>Basis logaritma adalah a. Ini dapat dibaca sebagai log basis a dari x. 2 basis yang paling umum digunakan dalam fungsi logaritma adalah basis 10 dan basis e.</p>
+        <button onclick="hideSection('fungsi')">Kembali Ke Menu</button>
+    </section>
+    
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('menu').style.display = 'none'; // Sembunyikan menu
+            document.getElementById(sectionId).style.display = 'block'; // Tampilkan section yang dipilih
+        }
+    
+        function hideSection(sectionId) {
+            document.getElementById(sectionId).style.display = 'none'; // Sembunyikan section
+            document.getElementById('menu').style.display = 'block'; // Tampilkan menu
+        }
+    </script>
+    
+        <section id="contoh" class="section" style="display:none;">
+            <iframe src="contohkal.html" width="100%" height="500" style="border: none;" sandbox="allow-scripts allow-same-origin"></iframe>
+            <button onclick="showSection('menu')">Kembali ke Menu</button>
+        </section>
+
+
+
+        <section id="belajar" class="section" style="display:none; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 75vh; text-align: center;">
+            <h3>Belajar With Geogebra</h3>
+            <div class="geogebra-container">
+            <iframe src="https://www.geogebra.org/calculator" width="900" height="500" allowfullscreen style="border: 1px solid #e4e4e4; border-radius: 4px;" frameborder="10"></iframe></div>
+           
+        </section>
+
+        <section id="kalkulator" class="section" style="display:none; flex-direction: column; align-items: center; justify-content: center; height: 75vh; text-align: center; background-color: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+    <h3>Kalkulator Logaritma</h3>
+    <iframe src="https://www.meracalculator.com/math/id/logaritma.php" width="900" height="500" allowfullscreen style="border: 2px solid #e4e4e4; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);"></iframe>
+   
+</section>
+        
+        <section id="about" class="section" style="display:none;">
+            
+            <h2>About Us</h2>
+            <div class="about-container">
+                <div class="about-item" onclick="openModal('muthia.jpg', '@muthiaanggrn_')">
+                    <img src="https://img.freepik.com/free-vector/cute-girl-smiling-welcoming-posture-character-cartoon-logo-hand-drawn-art-illustration_56104-1246.jpg?ga=GA1.1.1950441726.1730374864&semt=ais_hybrid"   alt="Pembuat 1"/>
+                    <p class="button-like">Muthia Anggraeni Rukmawan<br>247006111029</p>
+                    
+                </div>
+                <div class="about-item" onclick="openModal('april.jpg', '@nabilaprilll')">
+                    <img src="https://img.freepik.com/free-vector/smiling-cute-kid-girl-holding-empty-sign-character-cartoon-logo-hand-drawn-art-illustration_56104-1256.jpg?t=st=1732429111~exp=1732432711~hmac=da6a2a8ddb095ee03b6629497126406aa3038d96609752ef783cc2a44f177c54&w=900" alt="Pembuat 2" />
+                    <p class="button-like">Nabila Apriianti Nuravifah<br>247006111028</p>
+                </div>
+                <div class="about-item" onclick="openModal('afaww.jpg', '@fll.w_')">
+                    <img src="https://i.pinimg.com/736x/03/2a/9f/032a9f83130e38d11ce23be4b703be72.jpg" alt="Wafa Faujiah" width="400px" />
+                    <p class="button-like">Wafa Faujiah<br>247006111026</p>
+                </div>
+                <div class="about-item" onclick="openModal('yusup.jpg', '@yusuptyz')">
+                    <img src="https://img.freepik.com/free-vector/cute-man-teacher-thailand-uniform-character-education-back-school-logo-cartoon-art-illustration_56104-1540.jpg?t=st=1732528536~exp=1732532136~hmac=43ee484400a9beabef907ba5f39c7ea0ed3e0c6a6aadfd06665b4d77990e0df1&w=900" alt="Pembuat 4" width="400px"/>
+                    <p class="button-like">Yusup<br>247006111027</p>
+                </div>
+                <div class="modal" id="myModal" style="display:none;">
+                    <div class="modal-content">
+                        <img id="modal-image" src="" alt="Modal Image">
+                        <p id="modal-name" class="creator-name"></p>
+                    </div>
+                </div>
+            </div>
+             <script>
+        function openModal(imagePath, title) {
+            const modalContent = `
+                <div class="modal">
+                    <h2>${title}</h2>
+                    <img src="${imagePath}" alt="${title}" />
+                    <button onclick="closeModal()">Close</button>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalContent);
+        }
+
+        function closeModal() {
+            document.querySelector('.modal').remove();
+        }
+    </script>
+          
+        </section>
+        <!-- Modal untuk menampilkan gambar yang lebih besar -->
+        <div id="modal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-img">
+            <div id="caption"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
